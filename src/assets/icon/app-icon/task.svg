@@ -1,0 +1,6 @@
+<svg stroke="white" stroke-width="4" stroke-linejoin="round" width="100" height="100"
+    xmlns="http://www.w3.org/2000/svg">
+    <polyline points="75,15 95,15 95,95 5,95 5,15 25,15" fill="none" />
+    <polyline points="25,5 25,20 75,20 75,5 25,5 25,20" fill="white" />
+    <polyline points="30,55 50,80 70,35" fill="none" stroke-width="8" />
+</svg>

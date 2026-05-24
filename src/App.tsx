@@ -4,7 +4,7 @@ import './App.css'
 function App() {
   return (
     <>
-      <Sidebar avatar='/avatar/default.png'/>
+      <Sidebar avatar='/avatar/default.png' nama="John Doe" nip="01234567 201010 1 001"/>
     </>
   )
 }

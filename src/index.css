@@ -2,9 +2,9 @@
   --text: #181818;
   --bg: #eeeeee;
   --secondary: #dfdfdf;
-  --primary-gradient: #39eec1;
   --accent: #6fcf97;
-  --primary: #2fa084;
+  --primary: #66fad5;
+  --primary-gradient: #39eec1;
 
   font: 16px;
   font-family: "Inter", sans-serif;
@@ -19,16 +19,24 @@
   :root {
     --text: #ffffff;
     --bg: #131313;
-    --secondary: #333333;
-    --primary-gradient: #39eec1;
+    --secondary: #1b1b1b;
     --accent: #6fcf97;
-    --primary: #2fa084;
+    --primary: #66fad5;
+    --primary-gradient: #39eec1;
   }
 }
-body {
+
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+}
+body {
   width: 100%;
   min-height: 100vh;
 }
