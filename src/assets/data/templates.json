@@ -1,0 +1,8 @@
+{
+    "apps" : [
+        {"name": "dashboard", "label":"Dashboard"},
+        {"name": "assignment", "label":"Tugas"},
+        {"name": "note", "label":"Catatan"},
+        {"name": "file", "label":"Berkas"}
+    ]
+}

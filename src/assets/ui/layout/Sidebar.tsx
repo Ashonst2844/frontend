@@ -1,5 +1,7 @@
 import PrimaryButton from "../components/PrimaryButton";
 
+import datas from "../../data/templates.json";
+
 interface sidebarProps {
     avatar: string;
     nama: string;
@@ -11,26 +13,18 @@ function Sidebar({avatar, nama, nip}: sidebarProps) {
         <div id="sidebar">
             <div id="profile" className="center background-gradient">
                 <img src={avatar} alt="Avatar" />
-                <p>{nama}</p>
-                <span>( {nip} )</span>
+                <div className="divider">
+                    <p style={{textAlign:"center"}}>{nama}</p>
+                    <span>( {nip} )</span>
+                </div>
             </div>
             <div id="app-container">
-                <PrimaryButton w="100%" h="100%" link="#dashboard">
-                    <img src="src/assets/icon/app-icon/dashboard.svg" alt="Dashboard" />
-                    <p>Dashboard</p>
-                </PrimaryButton>
-                <PrimaryButton w="100%" h="100%" link="#tasks">
-                    <img src="src/assets/icon/app-icon/task.svg" alt="Tasks" />
-                    <p>Tasks</p>
-                </PrimaryButton>
-                <PrimaryButton w="100%" h="100%" link="#teacher-notes">
-                    <img src="src/assets/icon/app-icon/note.svg" alt="Your Notes" />
-                    <p>Notes</p>
-                </PrimaryButton>
-                <PrimaryButton w="100%" h="100%" link="#teacher-files">
-                    <img src="src/assets/icon/app-icon/file.svg" alt="Your Files" />
-                    <p>Files</p>
-                </PrimaryButton>
+                {datas.apps.map((app, index) => (
+                    <PrimaryButton key={index} w="100%" h="100%" link={`#${app.name}`}>
+                        <img src={`src/assets/icon/app-icon/${app.name}.svg`} alt={app.name} />
+                        <span>{app.label}</span>
+                    </PrimaryButton>
+                ))}
             </div>
         </div>
     )
