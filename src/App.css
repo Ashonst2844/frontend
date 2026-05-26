@@ -28,21 +28,27 @@
   gap: 10px;
 }
 
-/* PrimaryButton.tsx Styles */
-.primary-button {
+/* Button.tsx Styles */
+.button {
   padding: 10px;
   flex-direction: column;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
   transition: all 0.3s ease;
 }
-.primary-button:hover {
-  filter: brightness(90%);
+.button:hover {
+  filter: brightness(80%);
 }
-.primary-button img {
+.button img {
   width: clamp(20px, 30px, 40px);
   height: clamp(20px, 30px, 40px);
   margin: 10px 0;
+}
+.back-button {
+  border-radius: 50% !important;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 /* MainPage.tsx Styles */
@@ -54,15 +60,28 @@
 /* Pages.tsx Styles */
 .pages {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
+  background-image: var(--bg-image-1);
+  background-size: cover;
+  background-position: center;
 }
 
 /* HOME */
 #home {
   flex-direction: column;
-  background-image: var(--bg-image-1);
 }
-
+#home span {
+  opacity: 1;
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 10px;
+}
+#login-button-group {
+  top: 20px;
+  right: 20px;
+  padding: 0 20px;
+}
 /* MOBILE MODE */
 @media (max-width: 768px) {
   #root {
@@ -89,5 +108,14 @@
   }
   #main-page {
     width: 100%;
+  }
+  #login-button-group {
+    bottom: 20px;
+    top: auto;
+    right: auto;
+    width: 100%;
+  }
+  #login-button-group a {
+    width: 50% !important;
   }
 }

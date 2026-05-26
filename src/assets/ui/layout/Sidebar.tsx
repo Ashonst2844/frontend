@@ -1,4 +1,4 @@
-import PrimaryButton from "../components/PrimaryButton";
+import Button from "../components/Button";
 
 import datas from "../../data/templates.json";
 
@@ -20,10 +20,10 @@ function Sidebar({avatar, nama, nip}: sidebarProps) {
             </div>
             <div id="app-container">
                 {datas.apps.map((app, index) => (
-                    <PrimaryButton key={index} w="100%" h="100%" link={`#${app.name}`}>
+                    <Button type="primary" key={index} w="100%" h="100%" link={`#${app.name}`}>
                         <img src={`src/assets/icon/app-icon/${app.name}.svg`} alt={app.name} />
                         <span>{app.label}</span>
-                    </PrimaryButton>
+                    </Button>
                 ))}
             </div>
         </div>
