@@ -5,21 +5,19 @@ import FormBox from "../assets/ui/components/FormBox";
 import PrimaryInput from "../assets/ui/components/PrimaryInput";
 import Button from "../assets/ui/components/Button";
 
-function Register() {
+function Login() {
     return (
         <>
-            <Pages id="register" style={{display:"flex", justifyContent:"center", paddingTop:"150px"}}>
+            <Pages id="login" style={{display:"flex", justifyContent:"center", paddingTop:"150px"}}>
                 <div style={{width:"50%", height:"40%"}}>
                     <Button type="back-button" w="60px" h="60px" link="/">
                         <img src="src/assets/icon/back-arrow.svg" alt="Back" />
                     </Button>
-                    <h1>DAFTAR</h1>
-                    <FormBox action="register.php" method="POST">
-                        <PrimaryInput type="text" placeholder="Nama" name="name" required />
+                    <h1>Login</h1>
+                    <FormBox action="login.php" method="POST">
                         <PrimaryInput type="number" placeholder="NIP (18 digit)" name="nip" required />
                         <PrimaryInput type="password" placeholder="Password" name="password" required />
-                        <PrimaryInput type="password" placeholder="Confirm Password" name="confirm-password" required />
-                        <button style={{height:"60px", fontSize:"1.25rem"}} className="button background-gradient" type="submit">Daftar</button>
+                        <button style={{height:"60px", fontSize:"1.25rem"}} className="button background-gradient" type="submit">Masuk</button>
                     </FormBox>
                     <ButtonGroup position="relative" style={{marginTop:"20px"}}>
                         <Button type="secondary" w="50%" h="100%" link="/login"><p>Login</p></Button>
@@ -30,4 +28,4 @@ function Register() {
         </>
     )
 }
-export default Register;
+export default Login;

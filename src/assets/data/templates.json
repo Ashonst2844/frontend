@@ -1,8 +1,10 @@
 {
     "apps" : [
-        {"name": "dashboard", "label":"Dashboard"},
-        {"name": "assignment", "label":"Tugas"},
-        {"name": "note", "label":"Catatan"},
-        {"name": "file", "label":"Berkas"}
+        {"name": "dashboard", "label":"Dashboard", "onMenu":true},
+        {"name": "assignment", "label":"Tugas", "onMenu":true},
+        {"name": "note", "label":"Catatan", "onMenu":true},
+        {"name": "file", "label":"Berkas", "onMenu":true},
+        {"name": "schedule", "label":"Jadwal", "onMenu":true},
+        {"name": "account", "label":"Akun", "onMenu":false}
     ]
 }

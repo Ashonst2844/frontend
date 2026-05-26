@@ -20,7 +20,7 @@ function Sidebar({avatar, nama, nip}: sidebarProps) {
             </div>
             <div id="app-container">
                 {datas.apps.map((app, index) => (
-                    <Button type="primary" key={index} w="100%" h="100%" link={`#${app.name}`}>
+                    <Button type="primary" key={index} w="100%" h="100%">
                         <img src={`src/assets/icon/app-icon/${app.name}.svg`} alt={app.name} />
                         <span>{app.label}</span>
                     </Button>

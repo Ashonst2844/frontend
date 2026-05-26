@@ -1,13 +1,13 @@
 import Main from './pages/Main'
 import Register from './pages/Register'
+import Login from './pages/Login'
+import LandingPage from './pages/LandingPage'
 
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
 function App() {
-  const [initiate, setInitiate] = React.useState(false)
-
   const [user, setUser] = React.useState({avatar : "", nama: "", nip: ""})
 
   React.useEffect(() => {
@@ -24,9 +24,10 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Main initiate={initiate} nama={user.nama} nip={user.nip} avatar={user.avatar}/>} />
-        <Route path='/login' element={<Register page="login" initiate={initiate} setInitiate={setInitiate} />} />
-        <Route path='/register' element={<Register page="register" initiate={initiate} setInitiate={setInitiate} />} />
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/home' element={<Main nama={user.nama} nip={user.nip} avatar={user.avatar}/>} />
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>} />
       </Routes>
     </>
   )

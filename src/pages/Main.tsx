@@ -6,20 +6,19 @@ import '../App.css'
 import Home from './Home'
 
 type MainProps = {
-    initiate: boolean;
     nama: string;
     nip: string;
     avatar: string;
 }
 
-function Main({initiate, nama, nip, avatar}: MainProps) {
+function Main({nama, nip, avatar}: MainProps) {
 
     return (
         <>
             <Sidebar avatar={`/avatar/${avatar}`} nama={nama} nip={nip} />
             <MainPage>
 				<Routes>
-					<Route path='/' element={<Home nama={nama} initiate={initiate} />} />
+					<Route path='/' element={<Home nama={nama} />} />
 				</Routes>
             </MainPage>
         </>
