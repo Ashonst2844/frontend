@@ -3,12 +3,12 @@ import Button from "../components/Button";
 import datas from "../../data/templates.json";
 
 interface sidebarProps {
-    avatar: string;
     nama: string;
     nip: string;
 }
 
-function Sidebar({avatar, nama, nip}: sidebarProps) {
+function Sidebar({ nama, nip}: sidebarProps) {
+    const avatar = "default.png"
     return(
         <div id="sidebar">
             <div id="profile" className="center background-gradient">

@@ -1,27 +1,40 @@
 import MainPage from '../assets/ui/layout/MainPage'
 import Sidebar from '../assets/ui/layout/Sidebar'
-
-import { Routes, Route } from 'react-router-dom'
-import '../App.css'
 import Home from './Home'
 
-type MainProps = {
+import { useLocation, useNavigate, Routes, Route } from 'react-router-dom'
+import React from 'react'
+import '../App.css'
+
+type UserDataType = {
     nama: string;
     nip: string;
-    avatar: string;
-}
+    password: string;
+};
 
-function Main({nama, nip, avatar}: MainProps) {
+function Main() {
+
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    const currentUser = location.state?.userData as UserDataType | undefined;
+    React.useEffect(() => {
+        if (!currentUser) {
+            alert("Sesi tidak ditemukan, silakan login kembali.");
+            navigate("/login");
+        }
+    }, [currentUser, navigate]);
+    if (!currentUser) return null;
 
     return (
         <>
-            <Sidebar avatar={`/avatar/${avatar}`} nama={nama} nip={nip} />
+            <Sidebar nama={currentUser.nama} nip={currentUser.nip} />
             <MainPage>
 				<Routes>
-					<Route path='/' element={<Home nama={nama} />} />
+					<Route path='/' element={<Home nama={currentUser.nama} />} />
 				</Routes>
             </MainPage>
         </>
-    )   
+    );
 }
 export default Main;
