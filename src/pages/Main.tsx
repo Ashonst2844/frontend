@@ -2,27 +2,24 @@ import MainPage from '../assets/ui/layout/MainPage'
 import Sidebar from '../assets/ui/layout/Sidebar'
 
 import { Routes, Route } from 'react-router-dom'
-import React from 'react'
 import '../App.css'
 import Home from './Home'
 
 type MainProps = {
     initiate: boolean;
+    nama: string;
+    nip: string;
+    avatar: string;
 }
 
-function Main({initiate}: MainProps) {
-    const [data, setData] = React.useState({
-        avatar: 'default.png',
-        nama: '(Silahkan Login)',
-        nip: '01234567-201010-1-001'
-    })
+function Main({initiate, nama, nip, avatar}: MainProps) {
 
     return (
         <>
-            <Sidebar avatar={`/avatar/${data.avatar}`} nama={data.nama} nip={data.nip} />
+            <Sidebar avatar={`/avatar/${avatar}`} nama={nama} nip={nip} />
             <MainPage>
 				<Routes>
-					<Route path='/' element={<Home nama={data.nama} initiate={initiate} />} />
+					<Route path='/' element={<Home nama={nama} initiate={initiate} />} />
 				</Routes>
             </MainPage>
         </>
