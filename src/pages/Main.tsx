@@ -1,4 +1,3 @@
-import MainPage from '../assets/ui/layout/MainPage'
 import Sidebar from '../assets/ui/layout/Sidebar'
 import Home from './Home'
 
@@ -29,11 +28,11 @@ function Main() {
     return (
         <>
             <Sidebar nama={currentUser.nama} nip={currentUser.nip} />
-            <MainPage>
+            <div id='main-page'>
 				<Routes>
 					<Route path='/' element={<Home nama={currentUser.nama} />} />
 				</Routes>
-            </MainPage>
+            </div>
         </>
     );
 }

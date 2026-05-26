@@ -12,7 +12,7 @@ function Sidebar({ nama, nip}: sidebarProps) {
     return(
         <div id="sidebar">
             <div id="profile" className="center background-gradient">
-                <img src={avatar} alt="Avatar" />
+                <img src={`avatar/${avatar}`} alt="Avatar" />
                 <div className="divider">
                     <p style={{textAlign:"center"}}>{nama}</p>
                     <span>( {nip} )</span>

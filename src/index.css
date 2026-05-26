@@ -21,6 +21,12 @@
   text-rendering: optimizeLegibility;
 }
 
+@media (max-width: 768px) {
+  :root {
+    font-size: 10px;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #ffffff;
