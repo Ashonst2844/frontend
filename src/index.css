@@ -19,6 +19,10 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
+@font-face {
+  font-family: "LexendDeca";
+  src: url("src/assets/fonts/LexendDeca/LexendDeca-VariableFont_wght.ttf");
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -30,6 +34,7 @@
     --primary-gradient: #39eec1;
 
     --bg-image-1: url(/public/bg/bg1-dark.jpg);
+    --main-bg: url(/public/bg/wallpaper-dark.jpg);
   }
 }
 
@@ -54,12 +59,13 @@ body {
 }
 h1,
 h2 {
-  font-weight: 600;
+  font-family: "LexendDeca";
 }
 
 h1 {
   font-size: 34px;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 h2 {
   font-size: 21px;

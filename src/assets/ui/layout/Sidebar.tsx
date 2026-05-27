@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import Button from "../components/Button";
 
 import datas from "../../data/templates.json";
@@ -7,8 +8,10 @@ interface sidebarProps {
     nip: string;
 }
 
-function Sidebar({ nama, nip}: sidebarProps) {
+function Sidebar({nama, nip}: sidebarProps) {
     const avatar = "default.png"
+    const location = useLocation();
+
     return(
         <div id="sidebar">
             <div id="profile" className="center background-gradient">
@@ -19,8 +22,19 @@ function Sidebar({ nama, nip}: sidebarProps) {
                 </div>
             </div>
             <div id="app-container">
+                <Button type="primary" w="100%" h="100%" link={`/home`} state={location.state}>
+                    <img src="src/assets/icon/app-icon/home.svg" alt="home" />
+                    <span>Home</span>
+                </Button>
                 {datas.apps.map((app, index) => (
-                    <Button type="primary" key={index} w="100%" h="100%">
+                    <Button
+                        type="primary"
+                        key={index}
+                        w="100%"
+                        h="100%"
+                        link={`/home/${app.name}`}
+                        state={location.state}
+                    >
                         <img src={`src/assets/icon/app-icon/${app.name}.svg`} alt={app.name} />
                         <span>{app.label}</span>
                     </Button>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 interface ButtonProps {
     link?: string;
+    state?: unknown;
     children: React.ReactNode;
     w: string;
     h: string;
@@ -10,7 +11,7 @@ interface ButtonProps {
     type: "primary" | "secondary" | "back-button";
 }
 
-function Button({ w, h, link, children, onClick, style, type }: ButtonProps) {
+function Button({ w, h, link, state, children, onClick, style, type }: ButtonProps) {
     return (
         <Link 
             className={`center button ${
@@ -18,6 +19,7 @@ function Button({ w, h, link, children, onClick, style, type }: ButtonProps) {
                 type === "secondary" ? "background-border" : "back-button background-gradient"
             }`} 
             to={link}
+            state={state}
             style={{ width: w, height: h, ...style }}
             onClick={onClick}>
             {children}

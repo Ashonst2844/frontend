@@ -1,7 +1,7 @@
 import Pages from "../assets/ui/layout/Pages";
 import ButtonGroup from "../assets/ui/layout/ButtonGroup";
 
-import PrimaryInput from "../assets/ui/components/PrimaryInput";
+import Input from "../assets/ui/components/Input";
 import Button from "../assets/ui/components/Button";
 
 import React from "react";
@@ -52,14 +52,14 @@ function Login() {
     return (
         <>
             <Pages id="login" style={{display:"flex", justifyContent:"center", paddingTop:"150px"}}>
-                <div style={{width:"50%", height:"40%"}}>
+                <div className="sign-box">
                     <Button type="back-button" w="60px" h="60px" link="/">
                         <img src="src/assets/icon/back-arrow.svg" alt="Back" />
                     </Button>
                     <h1>Login</h1>
                     <form className="sign-form" onSubmit={handleSubmit} method="POST">
-                        <PrimaryInput type="number" placeholder="NIP (18 digit)" name="nip" required />
-                        <PrimaryInput type="password" placeholder="Password" name="password" required />
+                        <Input type="number" placeholder="NIP (18 digit)" name="nip" required />
+                        <Input type="password" placeholder="Password" name="password" required />
                         <button style={{height:"60px", fontSize:"1.25rem"}} className="button background-gradient" type="submit">Masuk</button>
                     </form>
                     <ButtonGroup position="relative" style={{marginTop:"20px"}}>

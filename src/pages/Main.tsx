@@ -1,5 +1,7 @@
 import Sidebar from '../assets/ui/layout/Sidebar'
 import Home from './Home'
+import  Dashboard from './Dashboard'
+import Schedule from './Schedule'
 
 import { useLocation, useNavigate, Routes, Route } from 'react-router-dom'
 import React from 'react'
@@ -9,6 +11,7 @@ type UserDataType = {
     nama: string;
     nip: string;
     password: string;
+    subject: string;
 };
 
 function Main() {
@@ -30,7 +33,9 @@ function Main() {
             <Sidebar nama={currentUser.nama} nip={currentUser.nip} />
             <div id='main-page'>
 				<Routes>
-					<Route path='/' element={<Home nama={currentUser.nama} />} />
+					<Route path='dashboard' element={<Dashboard/>} />
+					<Route path='schedule' element={<Schedule/>} />
+					<Route path='*' element={<Home nama={currentUser.nama} subject={currentUser.subject}/>} />
 				</Routes>
             </div>
         </>

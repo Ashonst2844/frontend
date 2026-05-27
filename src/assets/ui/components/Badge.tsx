@@ -8,7 +8,7 @@ interface BadgeProps {
 
 function Badge({ text, icon, w, h, title }: BadgeProps) {
     return (
-        <div className="center background-border" style={{width:w, height:h, borderRadius:"50%"}} title={title}>
+        <div className="center background-gradient" style={{width:w, height:h, borderRadius:"50%"}} title={title}>
             {icon}
             {text}
         </div>
