@@ -88,6 +88,13 @@
   border-radius: 30px;
   box-shadow: var(--shadow);
 }
+#landing-container span {
+  margin: 30px 0;
+}
+#landing-badge-box {
+  display: flex;
+  gap: 10px;
+}
 
 /* HOME */
 #home {
@@ -140,5 +147,22 @@
   }
   #login-button-group a {
     width: 50% !important;
+  }
+  #landing-container {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    flex-direction: column;
+    border-radius: 0;
+    padding: 20px;
+  }
+  #landing-container h1,
+  p,
+  span {
+    text-align: center;
+  }
+  #landing-badge-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }

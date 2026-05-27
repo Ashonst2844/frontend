@@ -7,10 +7,10 @@ function LandingPage() {
     return (
         <div id="landing-page" className="center">
             <div id="landing-container" className="center">
-                <h1>Selamat datang di Dashboard Guru</h1>
+                <h1 className="center">Selamat datang di Dashboard Guru</h1>
                 <p>Kami Hadir Mempermudah Tenaga Kependidikan Dalam Kegiatan Belajar Mengajar</p>
-                <span style={{marginBlock:"40px"}}>Mempermudah anda untuk mengatur:</span>
-                <div style={{display:"flex", gap:"20px"}}>
+                <span>Mempermudah anda untuk mengatur:</span>
+                <div id="landing-badge-box">
                     {datas.apps
                     .filter(data => data.onMenu)
                     .map((data, index) => (

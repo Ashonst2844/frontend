@@ -1,5 +1,3 @@
-import type React from "react";
-
 interface BadgeProps {
     text?: React.ReactNode;
     icon?: React.ReactNode;

@@ -6,25 +6,18 @@
   --primary: #66fad5;
   --primary-gradient: #39eec1;
   --glow: 0 0 10px rgba(111, 207, 151, 0.8);
-  --shadow:
-    5px 5px 20px rgba(0, 0, 0, 0.6), inset 1px 1px 10px rgba(255, 255, 255, 0.5);
+  --shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
 
   --bg-image-1: url(/public/bg/bg1.jpg);
   --main-bg: url(/public/bg/wallpaper.jpg);
 
-  font: 16px;
+  font: clamp(8px, 8px, 13px);
   font-family: "Inter", sans-serif;
   color-scheme: light dark;
   color: var(--text);
   background: rgb(var(--bg));
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-}
-
-@media (max-width: 768px) {
-  :root {
-    font-size: 10px;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -65,15 +58,15 @@ h2 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 34px;
   text-transform: uppercase;
 }
 h2 {
-  font-size: 2rem;
+  font-size: 21px;
 }
 p,
 span {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 span {
   opacity: 0.8;
