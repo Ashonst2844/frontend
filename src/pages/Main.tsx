@@ -1,7 +1,8 @@
 import Sidebar from '../assets/ui/layout/Sidebar'
 import Home from './Home'
-import  Dashboard from './Dashboard'
+import Dashboard from './Dashboard'
 import Schedule from './Schedule'
+import Account from './Account'
 
 import { useLocation, useNavigate, Routes, Route } from 'react-router-dom'
 import React from 'react'
@@ -20,21 +21,25 @@ function Main() {
     const navigate = useNavigate()
 
     const currentUser = location.state?.userData as UserDataType | undefined;
+    
     React.useEffect(() => {
         if (!currentUser) {
             alert("Sesi tidak ditemukan, silakan login kembali.");
             navigate("/login");
         }
     }, [currentUser, navigate]);
-    if (!currentUser) return null;
+    if (!currentUser) {
+        return null;
+    }
 
     return (
         <>
-            <Sidebar nama={currentUser.nama} nip={currentUser.nip} />
+            <Sidebar nama={currentUser.nama} nip={currentUser.nip}/>
             <div id='main-page'>
 				<Routes>
 					<Route path='dashboard' element={<Dashboard/>} />
 					<Route path='schedule' element={<Schedule/>} />
+                    <Route path='account' element={<Account nama={currentUser.nama} nip={currentUser.nip} subject={currentUser.subject}/>} />
 					<Route path='*' element={<Home nama={currentUser.nama} subject={currentUser.subject}/>} />
 				</Routes>
             </div>

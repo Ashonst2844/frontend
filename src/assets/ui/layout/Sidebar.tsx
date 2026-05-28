@@ -1,7 +1,9 @@
-import { useLocation } from "react-router-dom";
 import Button from "../components/Button";
+import Avatar from "../components/Avatar";
 
 import datas from "../../data/templates.json";
+
+import { useLocation } from "react-router-dom";
 
 interface sidebarProps {
     nama: string;
@@ -9,13 +11,12 @@ interface sidebarProps {
 }
 
 function Sidebar({nama, nip}: sidebarProps) {
-    const avatar = "default.png"
     const location = useLocation();
 
     return(
         <div id="sidebar">
             <div id="profile" className="center background-gradient">
-                <img src={`avatar/${avatar}`} alt="Avatar" />
+                <Avatar size="80px"/>
                 <div className="divider">
                     <p style={{textAlign:"center"}}>{nama}</p>
                     <span>( {nip} )</span>

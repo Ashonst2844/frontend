@@ -6,7 +6,10 @@
   --primary: #66fad5;
   --primary-gradient: #39eec1;
   --glow: 0 0 10px rgba(111, 207, 151, 0.8);
-  --shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
+  --shadow: 10px 10px 15px rgba(0, 0, 0, 0.8);
+
+  --danger: #e61616;
+  --danger-gradient: #ff5e5e;
 
   --bg-image-1: url(/public/bg/bg1.jpg);
   --main-bg: url(/public/bg/wallpaper.jpg);
@@ -94,4 +97,7 @@ span {
 }
 .background-border:hover {
   box-shadow: var(--glow);
+}
+.background-danger {
+  background: linear-gradient(45deg, var(--danger-gradient), var(--danger));
 }

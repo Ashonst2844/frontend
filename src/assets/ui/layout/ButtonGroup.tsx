@@ -1,6 +1,6 @@
 interface ButtonGroupProps {
     children: React.ReactNode;
-    position: "absolute" | "relative";
+    position?: "absolute" | "relative";
     id?: string;
     style?: React.CSSProperties;
 }

@@ -8,7 +8,7 @@ interface ButtonProps {
     h: string;
     onClick?: () => void;
     style?: React.CSSProperties;
-    type: "primary" | "secondary" | "back-button";
+    type: "primary" | "secondary" | "back-button" | "danger";
 }
 
 function Button({ w, h, link, state, children, onClick, style, type }: ButtonProps) {
@@ -16,7 +16,8 @@ function Button({ w, h, link, state, children, onClick, style, type }: ButtonPro
         <Link 
             className={`center button ${
                 type === "primary" ? "background-gradient" : 
-                type === "secondary" ? "background-border" : "back-button background-gradient"
+                type === "secondary" ? "background-border" :
+                type === "back-button" ? "back-button background-gradient" : "background-danger"
             }`} 
             to={link}
             state={state}
