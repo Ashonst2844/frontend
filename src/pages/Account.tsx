@@ -4,8 +4,10 @@ import Button from "../assets/ui/components/Button";
 import Pages from "../assets/ui/layout/Pages";
 import Container from "../assets/ui/layout/Container";
 import ButtonGroup from "../assets/ui/layout/ButtonGroup";
+import FloatFrame from "../assets/ui/layout/FloatFrame";
 
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
 interface accountProps {
     nama: string;
@@ -14,6 +16,8 @@ interface accountProps {
 }
 
 function Account({nama,nip,subject}: accountProps) {
+    const [openFrame, setOpenFrame] = React.useState(false);
+
     const navigate = useNavigate();
 
     const handleDelete = async () => {
@@ -52,10 +56,15 @@ function Account({nama,nip,subject}: accountProps) {
                     <span>{subject}</span>
                 </div>
                 <ButtonGroup style={{width:"100%", padding:"10px"}} id="account-button-group">
-                    <Button w="50%" h="50px" type="primary"><p>Edit</p></Button>
+                    <div className="edit-button center background-gradient button" onClick={() => setOpenFrame(true)}>
+                        <p>Edit</p>
+                    </div>
                     <Button w="50%" h="50px" type="danger" onClick={handleDelete}><p>Delete</p></Button>
                 </ButtonGroup>
             </Container>
+            <FloatFrame id="edit-account" open={openFrame} onClose={() => setOpenFrame(false)}>
+                <h1>Edit Akun</h1>
+            </FloatFrame>
         </Pages>
     )
 }

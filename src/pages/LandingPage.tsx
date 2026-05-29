@@ -8,7 +8,7 @@ import datas from "../assets/data/templates.json"
 function LandingPage() {
     return (
         <div id="landing-page" className="center">
-            <Container w="70%" h="80%" id="landing-container">
+            <Container w="70%" h="80%" id="landing-container" className="center" style={{flexDirection:"column"}}>
                 <h1 className="center">Selamat datang di Dashboard Guru</h1>
                 <p>Kami Hadir Mempermudah Tenaga Kependidikan Dalam Kegiatan Belajar Mengajar</p>
                 <span>Mempermudah anda untuk mengatur:</span>
